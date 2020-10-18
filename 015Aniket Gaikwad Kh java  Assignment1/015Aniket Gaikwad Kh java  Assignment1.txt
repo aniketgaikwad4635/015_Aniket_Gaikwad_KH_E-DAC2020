@@ -1,0 +1,324 @@
+que1
+public class Hello{
+   public static void main(String[] args)
+   {
+     System.out.println("Hello World");
+    }
+}
+--------------------------------------------------------------------------
+que2
+public class Rollno{
+  public static void main(String[] args){
+    int rollNo = 100;
+   System.out.println("roll no =" +rollNo);
+  }
+}
+--------------------------------------------------------------------------
+que3 A
+public class A{
+  public static void main(String[] args){
+   int x=5;
+   int y;
+
+   y=x*x + 3*7 -7;
+   System.out.println(y);
+  }
+}
+--------------------------------------------------------------------------
+que3 B
+public class B{
+  public static void main(String[] args){
+   int x=5;
+   int y;
+
+   y = x++ + ++x ;
+   System.out.println("x="+x+" y="+y);
+  }
+}
+------------------------------------------------------------------------------
+que3 C
+public class C{
+  public static void main(String[] args){
+   int x=5;
+   int y=12;
+   int z;
+
+   z= x++ - --y - --x  +  x++ ;
+   System.out.println("x="+x+" y="+y+" z="+z);
+  }
+}
+---------------------------------------------------------------------------------
+que3 D
+public class D{
+  public static void main(String[] args){
+   boolean x=true;
+   boolean y=false;
+   boolean z;
+
+   z= x && y || !(x||y) ;
+   System.out.println("x="+x+" y="+y+" z="+z);
+  }
+}
+-------------------------------------------------------------------------------------
+que4
+public class Casting{
+ public static void main(String[] args){
+   byte value1=125;
+   byte value2=125;
+   //System.out.println("value stored in short(2byte)="+value);
+   byte downcast= (byte) (value1+value2);
+   System.out.println("addition="+downcast);
+ }
+}
+--------------------------------------------------------------------------------------
+que5
+public class Welcome{
+   public static void main(String args[]){
+       System.out.println("Welcome "+ args[0]);
+  }
+}
+-----------------------------------------------------------------------------------------
+que6
+import java.util.Scanner;
+import java.lang.Math.*;
+
+public class Circle{
+  public static void main(String[] args){
+     Scanner sc=new Scanner(System.in);
+     System.out.print("Enter Radius of circle:");
+     double r=sc.nextDouble();
+    
+     double area=Math.PI*r*r;
+     double roundedarea=Math.round(area*100.0)/100.0;
+
+     double per=2*Math.PI*r;
+     double roundedper=Math.round(per*100.0)/100.0;
+
+      System.out.println("Area="+ roundedarea);
+      System.out.println("Circumfererence="+ roundedper);
+  }
+}
+---------------------------------------------------------------------------------------------
+que7
+import java.util.Scanner;
+import java.lang.Math.*;
+
+public class Percent{
+  public static void main(String[] args){
+     Scanner sc= new Scanner(System.in);
+     System.out.println("Enter Marks in 5 subject:");
+     int s1=sc.nextInt(); 
+     int s2=sc.nextInt();
+     int s3=sc.nextInt();  
+     int s4=sc.nextInt(); 
+     int s5=sc.nextInt(); 
+   
+   double perc= (s1+s2+s3+s4+s5)/5.0;
+   double roundperc=Math.round(perc*100.0)/100.0;
+   System.out.println("percentage marks =" +roundperc+"%"); 
+  }
+}
+---------------------------------------------------------------------------------------------
+que8
+import java.util.Scanner;
+import java.lang.Math.*;
+
+public class Simplei{
+  public static void main(String[] args){
+     Scanner sc= new Scanner(System.in);
+     System.out.print("Enter principle amount:");
+     int p=sc.nextInt(); 
+     System.out.print("Enter rate of interest:");
+     double r=sc.nextDouble(); 
+     System.out.print("Enter time in year:");
+     double t=sc.nextDouble();
+   
+   double si= (t*r*p)/100;
+   double roundsi=Math.round(si*100.0)/100.0;
+   System.out.println("Simple Interest="+roundsi); 
+   System.out.println("Total Amount="+(p+roundsi));
+  }
+}
+------------------------------------------------------------------------------------------------
+que9
+import java.util.Scanner;
+
+public class Days{
+  public static void main(String[] args){
+     Scanner sc= new Scanner(System.in);
+     System.out.print("Enter Days:");
+     int d=sc.nextInt(); 
+    
+     int year=0;
+     int month=0;
+
+   while(d>=365){
+     d=d-365;
+     year++;
+   }
+   while(d>=31){
+    d=d-31;
+    month++;  
+   }
+  
+   System.out.println("year="+year+" month="+month+" days="+d); 
+  
+  }
+}
+-----------------------------------------------------------------------------------------------------
+que10
+import java.util.Scanner;
+import java.lang.Math.*;
+
+public class Temp{
+  public static void main(String[] args){
+     Scanner sc= new Scanner(System.in);
+     System.out.print("Enter temprature in fahrenheit:");
+     double tempf=sc.nextDouble(); 
+     double tempc=(5*(tempf-32))/9;
+     double roundtempc=Math.round(tempc*100.0)/100.0;
+    System.out.print("Temprature in celsius:"+roundtempc);
+  }
+}
+----------------------------------------------------------------------------------------------------------
+que11
+import java.util.Scanner;
+
+public class Swap{
+ public static void main(String[] args){
+   Scanner scan=new Scanner(System.in);
+   System.out.print("Enter first number:");
+   int x=scan.nextInt();
+   System.out.print("Enter second number:");
+   int y=scan.nextInt();
+
+   System.out.println("Before swaping");  
+   System.out.println("X="+x+" Y="+y);
+
+   x=x+y;
+   y=x-y;
+   x=x-y;
+
+   System.out.println("After swaping");  
+   System.out.println("X="+x+" Y="+y);
+   
+  }
+}
+------------------------------------------------------------------------------------------------------
+que12
+import java.util.Scanner;
+import java.lang.Math.*;
+
+public class Salary{
+  public static void main(String[] args){
+     Scanner sc= new Scanner(System.in);
+     System.out.print("Enter basic salary of employee:");
+     int basic=sc.nextInt(); 
+     double HRA;
+     double DA;
+     double GS;
+     double roundGS;
+     if (basic<10000)
+    {
+     HRA=0.10*basic;
+     DA=0.90*basic;
+     GS=basic+DA+HRA;
+     roundGS=Math.round(GS*100.0)/100.0;
+     System.out.println("Gross Salary="+roundGS);
+    }
+    else if(basic>=10000){
+     HRA=2000;
+     DA=0.98*basic;
+     GS=basic+DA+HRA;
+     roundGS=Math.round(GS*100.0)/100.0;
+     System.out.println("Gross Salary="+roundGS);
+     }
+     
+  }
+}
+---------------------------------------------------------------------------------------------
+que13
+import java.util.Scanner;
+import java.lang.Math.*;
+
+public class Greatest{
+  public static void main(String[] args){
+     Scanner sc= new Scanner(System.in);
+     System.out.print("Enter 3 numbers:");
+     int a=sc.nextInt();
+     int b=sc.nextInt();
+     int c=sc.nextInt();
+   
+    int d=c>((a>b)?a:b)? c:((a>b)?a:b);
+    System.out.println("greatest number is "+d); 
+    
+   
+     if (a>=b && a>=c){
+     System.out.println("greatest number is "+a);
+     }
+    else if (b>=a && b>=c){
+     System.out.println("greatest number is "+b);
+     }
+     else if (c>=a && c>=b){
+     System.out.println("greatest number is "+c);
+     }
+   
+  }
+}
+----------------------------------------------------------------------------------
+que14
+import java.util.Scanner;
+
+public class Leap{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter year:");
+    int year=sc.nextInt();
+   
+   if(year%4==0){
+    System.out.println("Leap Year");
+   }
+   else{
+    System.out.println("Not Leap Year");
+   }
+  }
+}
+-------------------------------------------------------------------------------------
+que15
+import java.util.Scanner;
+
+public class Marry{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.print("Enter gender(m/f):");
+    char gender=sc.next().charAt(0);
+    System.out.print("Enter age:");
+    int age=sc.nextInt();
+     if( gender=='m'){
+         if(age>=21){
+          System.out.println("eligible for marriage");
+         }
+         else if(age<21 && age>0){
+          System.out.println("not eligible for marriage");
+         }
+         else{
+         System.out.println("Invalid age");
+         }
+      }
+     else if(gender=='f'){
+        if(age>=18){
+           System.out.println("eligible for marriage");
+         }
+        else if(age<18 && age>0){
+           System.out.println("not eligible for marriage");
+         }
+        else {
+        System.out.println("Invalid age");
+        }
+     } 
+     else{
+         System.out.println("Invalid Entry");
+      }
+  }
+}
+-------------------------------------------------------------------------------------------
