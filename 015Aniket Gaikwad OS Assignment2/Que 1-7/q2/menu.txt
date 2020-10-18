@@ -1,0 +1,41 @@
+#!/bin/bash
+echo "1.length of string"
+echo "2.coying string"
+echo "3.concatenation string"
+echo "4.compare 2 string"
+echo "5.reversing a string"
+echo "your choice:"
+read choice
+ if [[ "$choice" = '1' ]];then
+         echo "enter string:"
+         read str1
+         length=${#str1}
+         echo "length= $str1"
+  elif [[ "$choice" = '2' ]];then
+          echo "enter string:"
+          read str2
+          newstr=$str2
+          echo "copied string: $newstr"
+  elif [[ "$choice" = '3' || "$choice" = '4' ]];then
+          echo "enter first string:"
+          read str3
+          echo "enter second string:"
+          read str4
+          length3=${#str3}
+          length4=${#str4}
+          if [[ "$length3" > "$length4" ]];then
+                  echo "$str1 is greater"
+          else
+                  echo "$str2 is greater"
+          fi
+
+          concat=$((str1+str2))
+          echo "concatinated string $concat"
+  
+      elif [[ "$choice" = '5' ]];then   
+      echo "Enter strings:"
+      read str
+
+      echo "$str" | awk '{ for (i=NF; i>1 ; i--)
+                printf("%s ", $i); print $1;}'
+  fi

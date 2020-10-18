@@ -1,0 +1,2 @@
+use command ls -al
+it shows all files with its permissions of read,write,execute.

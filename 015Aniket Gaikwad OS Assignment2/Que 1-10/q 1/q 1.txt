@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Enter year:"
+read year
+if [[ "$(($year%4))" == 0 ]];then
+   echo "leap year"
+else
+   echo "Not leap year"
+fi

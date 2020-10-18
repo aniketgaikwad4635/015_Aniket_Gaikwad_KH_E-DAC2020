@@ -1,0 +1,230 @@
+que2
+#!/bin/bash
+echo "1.length of string"
+echo "2.coying string"
+echo "3.concatenation string"
+echo "4.compare 2 string"
+echo "5.reversing a string"
+echo "your choice:"
+read choice
+ if [[ "$choice" = '1' ]];then
+         echo "enter string:"
+         read str1
+         length=${#str1}
+         echo "length= $str1"
+  elif [[ "$choice" = '2' ]];then
+          echo "enter string:"
+          read str2
+          newstr=$str2
+          echo "copied string: $newstr"
+  elif [[ "$choice" = '3' || "$choice" = '4' ]];then
+          echo "enter first string:"
+          read str3
+          echo "enter second string:"
+          read str4
+          length3=${#str3}
+          length4=${#str4}
+          if [[ "$length3" > "$length4" ]];then
+                  echo "$str1 is greater"
+          else
+                  echo "$str2 is greater"
+          fi
+
+          concat=$((str1+str2))
+          echo "concatinated string $concat"
+  
+      elif [[ "$choice" = '5' ]];then   
+      echo "Enter strings:"
+      read str
+
+      echo "$str" | awk '{ for (i=NF; i>1 ; i--)
+                printf("%s ", $i); print $1;}'
+  fi
+----------------------------------------------------------------------------------------------------
+
+que4
+#!/bin/bash
+echo "$HOME"
+echo "$PATH"
+echo "$SHELL"
+echo "$HISTORY"
+echo "$LOGNAME"
+echo "$TERM"
+---------------------------------------------------------------------------------------------------
+
+que6
+use command ls -al
+it shows all files with its permissions of read,write,execute.
+-------------------------------------------------------------------------------------------------------
+que7
+find +500 -print
+---------------------------------------------------------------------------------------------------------
+que1
+#!/bin/bash
+echo "Enter year:"
+read year
+if [[ "$(($year%4))" == 0 ]];then
+   echo "leap year"
+else
+   echo "Not leap year"
+fi
+--------------------------------------------------------------------------------------------------------
+que2.1
+#!/bin/bash
+echo "Enter number(1-7):"
+read n
+
+case $n in
+        1) echo "Sunday";;
+        2) echo "monday";;
+        3) echo "tuesday";;
+        4) echo "wednesday";;
+        5) echo "thursday";;
+        6) echo "friday";;
+        7) echo "saturday";;
+        *) echo "enter valid number";;
+esac
+---------------------------------------------------------------------------------------------------------------
+que2.2
+#!/bin/bash
+
+echo "Enter number(1-7):"
+read n
+
+if [[ "$n" = 1 ]];then
+        echo "sunday"
+   elif [[ "$n" = 2 ]];then
+     echo "Monday"
+   elif [[ "$n" = 3 ]];then
+      echo "tuesday"
+  elif [[ "$n" = 4 ]];then
+    echo "wednesday"
+   elif [[ "$n" = 5 ]];then
+           echo "thursday"
+   elif [[ "$n" = 6 ]];then
+        echo "friday"
+   elif [[ "$n" = 7 ]];then
+     echo "saturday"
+   else                                                                                                                       
+      echo "Invalid input"
+fi
+----------------------------------------------------------------------------------------------------------
+que3
+#!/bin/bash
+echo "Enter first number"
+read a
+echo "enter second number"
+read b
+echo "enter third number"
+read c
+
+if [[ "$a" -ge "$b" && "$a" -ge "$c" ]];then
+     echo "$a is bigger"
+   elif [[ "$b" -ge "$a" && "$b" -ge "$c" ]];then
+    echo "$b is bigger"
+   elif [[ "$c" -ge "$a" && "$c" -ge "$b" ]];then
+   echo "$c is bigger"
+fi
+
+sum=$(($a+$b+$c))
+
+echo "average is "
+printf "%.2f" $(echo "scale=2; $sum / 3 " | bc )
+-------------------------------------------------------------------------------------------
+que4
+#!/bin/bash
+echo "Enter number:"
+read n
+rem=$((n%2))
+if [[ "$rem" = '0' ]]; then
+   echo "even"
+else
+    echo "odd"
+fi
+----------------------------------------------------------------------------------------------
+
+que5
+cal [month] [year]
+ex cal 10 2013
+-------------------------------------------------------------------------------------------------------
+que6
+#!/bin/bash
+echo "enter first number"
+read a
+echo "enter second number"
+read b
+
+add=`expr "$a" + "$b"`
+echo "addition is $add"
+
+let sum=a+b
+echo "sum is $sum"
+
+#prod=`expr "$a" * "$b"`
+#echo "product is $prod"
+
+let mult=a*b
+echo "multiplication is $mult"
+
+echo "Division is "
+printf "%.2f" $(echo "scale=3; $a / $b " | bc )
+-------------------------------------------------------------------------------------------------
+que7
+#!/bin/bash
+
+echo number of iterations for fibonacci series
+read n
+f=0
+s=1
+t=0
+
+echo $f
+echo $s
+for ((i=2; i$n; i++))
+do
+     t=$(($f+$s))
+     f=$s
+     s=$t
+     echo $t
+done
+--------------------------------------------------------------------------------------------------
+que8
+#!/bin/bash
+echo "enter string"
+read str
+reverse=""
+length=${#str}
+for ((i=$length-1; i>=0; i--))
+do
+        reverse=$reverse${str:$i:1}
+done
+echo "$reverse"
+---------------------------------------------------------------------------------------------------
+que9
+#!/bin/bash
+echo "Enter strings:"
+read str
+
+echo "$str" | awk '{ for (i=NF; i>1 ; i--)
+                printf("%s ", $i); print $1;}'
+----------------------------------------------------------------------------------------------------
+que10
+#!/bin/bash
+
+echo "Enter number"
+read n
+temp=$n
+
+rem=0
+rev=0
+
+while [[ "$n" > 0 ]]
+do
+        rem=$(($n%10))
+        rev=$(($rev*10+$rem))
+        n=$(($n/10))
+done
+
+echo "given number=$temp"
+echo "reverse number=$rev"
+------------------------------------------------------------------------------------------------------

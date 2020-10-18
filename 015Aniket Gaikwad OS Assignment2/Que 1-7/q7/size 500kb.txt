@@ -1,0 +1,3 @@
+Write a shell script to print all files name and size greater than 5K
+
+find +500 -print
