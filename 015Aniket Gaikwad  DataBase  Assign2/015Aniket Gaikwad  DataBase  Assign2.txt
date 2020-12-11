@@ -1,0 +1,129 @@
+create database assignment2;
+use assignment2;
+
+create table Publisher(   pubid int(3) primary key,
+                          pname varchar(30), 
+                          email varchar(50) unique,
+                          phone varchar(30)
+                          );
+create table subjects (
+                         subid varchar(5) primary key,
+                         sname varchar(30)
+);                          
+create table Authors( 
+               auid int(5) primary key,
+               aname varchar(30),
+               email varchar(50) unique,
+               phone varchar(30)
+               ); 
+create table Titles( 
+              titleid int (5) primary key,  
+              title varchar(30), 
+              pubid int(5),
+              subid varchar(5),
+              pubdate Date, 
+              price int(4),
+              constraint fk1_pubid_Titles foreign key(pubid)  references publisher (pubid),
+              constraint fk2_subid_Titles foreign key(subid) references subjects (subid) 
+              );               
+
+create table titleauthors( 
+              titleid int(5),
+              auid int(5) , 
+              importance int(2), 
+              primary key(titleid , auid),
+              constraint fk1_titleid_titleauthors foreign key (titleid) references Titles (titleid),
+			  constraint fk2_auid_titleauthors foreign key(auid) references Authors (auid) 
+              );
+    
+INSERT INTO SUBJECTS VALUES ('ORA','ORACLE DATABASE 10g'); 
+INSERT INTO SUBJECTS VALUES ('JAVA','JAVA LANGUAGE');
+INSERT INTO SUBJECTS VALUES ('JEE','JAVA ENTEPRISE EDITION');
+INSERT INTO SUBJECTS VALUES ('VB','VISUAL BASIC.NET');
+INSERT INTO SUBJECTS VALUES ('ASP','ASP.NET'); 
+   
+INSERT INTO PUBLISHER VALUES (1,'WILLEY','WDT@VSNL.NET','91-11-23260877');
+INSERT INTO PUBLISHER VALUES (2,'WROX','INFO@WROX.COM',NULL);
+INSERT INTO PUBLISHER VALUES (3,'TATA MCGRAW-HILL','FEEDBACK@TATAMCGRAWHILL.COM','91-11-33333322');
+INSERT INTO PUBLISHER VALUES (4,'TECHMEDIA','BOOKS@TECHMEDIA.COM','91-11-33257660');
+
+INSERT INTO AUTHORS VALUES (101, 'HERBERT SCHILD','HERBERT@YAHOO.COM',NULL);
+INSERT INTO AUTHORS VALUES (102, 'JAMES GOODWILL','GOODWILL@HOTMAIL.COM',NULL);
+INSERT INTO AUTHORS VALUES (103, 'DAVAID HUNTER','HUNTER@HOTMAIL.COM',NULL);
+INSERT INTO AUTHORS VALUES (104, 'STEPHEN WALTHER','WALTHER@GMAIL.COM',NULL);
+INSERT INTO AUTHORS VALUES (105, 'KEVIN LONEY','LONEY@ORACLE.COM',NULL);
+INSERT INTO AUTHORS VALUES (106, 'ED. ROMANS','ROMANS@THESERVERSIDE.COM',NULL);
+
+INSERT INTO TITLES VALUES (1001,'ASP.NET UNLEASHED',4,'ASP',"2002-04-12",540);
+INSERT INTO TITLES VALUES (1002,'ORACLE10G COMP. REF.',3,'ORA','2005-05-01',575);
+INSERT INTO TITLES VALUES (1003,'MASTERING EJB',1,'JEE','2005-02-03',475);
+INSERT INTO TITLES VALUES (1004,'JAVA COMP. REF',3,'JAVA','2005-04-03',499);
+INSERT INTO TITLES VALUES (1005,'PRO. VB.NET',2,'VB','2005-06-15',450);
+
+INSERT INTO TITLEAUTHORS VALUES (1001,104,1);
+INSERT INTO TITLEAUTHORS VALUES (1002,105,1);
+INSERT INTO TITLEAUTHORS VALUES (1003,106,1);
+INSERT INTO TITLEAUTHORS VALUES (1004,101,1);
+INSERT INTO TITLEAUTHORS VALUES (1005,103,1);
+INSERT INTO TITLEAUTHORS VALUES (1005,102,2);
+
+select * from subjects where sname like 'ORACLE%';
+select * from subjects where sname like 'j%';
+select * from subjects where sname like '%.net';
+select * from authors where aname like '%er';
+select * from publisher where pname like '%hill';
+
+select * from titles where price<500;
+-- select * from title where pubdate<'2005-05-03';
+select * from subjects where subid ='java' or subid='jee';
+select * from authors where auid>103;
+select * from titles where titleid=1001 or price>400;
+
+select * from publisher where pname='techmedia' or pname='wrox';
+
+select max(price)  from titles;
+-- select max(price) as maximumPrice from titles;
+select avg(importance) from titleauthors;
+-- select avg(importance) as avgImportance from titleauthors;
+select count(auid) from authors;
+-- select count(auid) as TotalRecords from authors;
+select sum(price) from titles;
+-- select sum(price) as TotalSum from titles;
+
+select * from titles where pubdate<cast('2005-04-01' as date);
+SELECT YEAR(CURRENT_DATE());
+select MONTH(CURRENT_DATE());
+SELECT LAST_DAY(pubdate) FROM TITLES WHERE TITLE LIKE "JAVA%"; 
+
+create table employee( emp_id int (4), emp_name char(50));
+alter table employee add column dept_id int(4);
+alter table employee modify column emp_name varchar(50);
+RENAME TABLE EMPLOYEE TO SCOTT;
+
+
+create table emp(salary float(7,3));
+insert into emp values (1234.567);
+insert into emp values (1530.019);
+insert into emp values (1652.786);
+insert into emp values (1775.156);
+
+create table Stringcdac( srno int (4), center varchar(10) , loc varchar(10) , adddate date);
+insert into  Stringcdac values (1, "CDAC", "mumbai", "2020-12-7");
+insert into  Stringcdac values (1, "CDAC", "kharghar", "2020-12-7");
+select * from Stringcdac where center like "c%";
+select * from Stringcdac where center like "%a_" and loc like "%h__";
+
+SELECT CONCAT("CDAC "," mumbai");
+SELECT CHAR_LENGTH("CDAC MUMBAI") AS lengthofString;
+SELECT LENGTH("CDAC MUMBAI") AS lengthofString;
+SELECT INSTR("CDAC MUMBAI","MUM") AS matchpoint;
+SELECT LOWER("CDAC MUMBAI");
+SELECT LPAD("CDAC MUMBAI ",20,"CDAC");    
+SELECT LTRIM("  CDAC MUMBAI");      
+SELECT REPLACE("CDAC MUMBAI","MUMBAI","KHARGHAR");
+SELECT REVERSE("CDAC MUMBAI");
+SELECT STRCMP("CDAC MUMBAI","CDAC MUMBAI");
+SELECT SUBSTR("CDAC MUMBAI",5,3);
+SELECT ucase("cdac mumbai");
+
+
