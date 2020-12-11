@@ -1,0 +1,98 @@
+CREATE database assignment5;
+use assignment5;
+
+-- que1
+DELIMITER $$
+CREATE PROCEDURE OPERATION_IN (IN A INT, IN B INT)
+BEGIN
+SELECT A+B ;
+SELECT A-B ;
+SELECT A*B  ;
+SELECT A/B  ;
+END $$
+CALL OPERATION_IN(10,20);
+-- QUE 2 
+DELIMITER $$
+CREATE PROCEDURE REVSTRING_IN(IN STR VARCHAR(20))
+BEGIN
+SELECT REVERSE(STR);
+END $$
+CALL  REVSTRING_IN("WELCOME");
+
+Create table EMP ( 
+            EMPNO numeric(4) not null, 
+            ENAME varchar(30) not null, 
+            JOB varchar(10), MGR numeric(4), 
+            HIREDATE date, 
+            SAL numeric(7,2), 
+            DNO numeric(2) ); 
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DNO ) values(1000,  'Manish' , 'SALESMAN', 1003,  '2020-02-18', 600,  30) ;
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DNO ) values(1001,  'Manoj' , 'SALESMAN', 1003,  '2018-02-18', 600,  30) ;
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DNO ) values(1002 , 'Ashish', 'SALESMAN',1003 , '2013-02-18',  750,  30 );
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DNO ) values(1004,  'Rekha', 'ANALYST', 1006 , '2001-02-18', 3000,  10);
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DNO ) values(1005 , 'Sachin', 'ANALYST', 1006 ,  '2019-02-18', 3000, 10 );
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DNO ) values(1006,  'Pooja',  'MANAGER'  ,     null    , '2000-02-18' ,6000, 10 );
+
+Create table dept (
+                 dno numeric(4) not null,
+                 dname varchar(10) not null,
+                 area varchar(30));
+Insert into dept(dno,dname,area) values(10,'Store','Mumbai');
+Insert into dept(dno,dname,area) values(20,'Purchase','Mumbai');
+Insert into dept(dno,dname,area) values(30,'Store', 'Delhi');
+Insert into dept(dno,dname,area) values(40,'Marketing','Pune');
+Insert into dept(dno,dname,area) values(50,'Finance','Delhi');
+Insert into dept(dno,dname,area) values(60,'Accounts','Mumbai');
+
+-- QUE3
+DELIMITER $$
+CREATE PROCEDURE HIGHSAL_5 ()
+BEGIN
+SELECT EMPNO , ENAME, SAL FROM EMP ORDER BY SAL DESC LIMIT 5 ;
+END $$
+CALL  HIGHSAL_5 ()
+
+-- QUE4
+DELIMITER $$
+CREATE PROCEDURE NEWTABLE_IN ()
+BEGIN
+CREATE TABLE emp_test (e_id int (4), e_name varchar(10), e_joining_date date);
+END $$
+CALL NEWTABLE_IN();
+
+-- QUE5 
+DELIMITER $$
+CREATE PROCEDURE Adddept_IN (IN DNO numeric, dname varchar(10) ,area varchar(30))
+BEGIN
+INSERT INTO dept values (DNO, DNAME, AREA);
+END $$
+CALL Adddept_IN(60,"Education","Pune");
+
+-- QUE6
+DELIMITER $$
+CREATE PROCEDURE sqrcube_IN(IN num INT)
+BEGIN
+SELECT num*num;
+SELECT num*num*num;
+END $$
+CALL sqrcube_IN(4);
+
+-- QUE7
+DELIMITER $$
+CREATE PROCEDURE intvar_OUT(OUT var INT)
+BEGIN
+DECLARE a INT;
+SET a=10;
+SELECT a INTO VAR;
+END $$
+CALL intvar_OUT(@x);
+SELECT @X;
+
+-- QUE8
+DELIMITER $$
+CREATE PROCEDURE BOTHINOUT(IN given INT, OUT ret INT)
+BEGIN
+SELECT SAL INTO ret FROM EMP WHERE EMPNO=GIVEN;
+END $$
+CALL BOTHINOUT(1001, @Y);
+SELECT @Y;
