@@ -1,0 +1,37 @@
+create database assignment3;
+use assignment3;
+
+create table Department( dept_id int(4) primary key not null, dept_name varchar(20));
+insert into Department value (1,"Finance");
+insert into Department value (2,"Training");
+insert into Department value (3, "Marketing");
+
+create table Employee ( empid int(4) not null, empname varchar(10) , dept_id int (4), salary int(4), manager int (4),
+                            constraint pk_Employee  primary key (empid),
+                            constraint fk_Employee foreign key (dept_id) references Department(dept_id)
+                        );
+insert into Employee values (1, "Arun", 1, 8000, 4);
+insert into Employee values (2, "Kiran", 1,7000,1);
+insert into Employee values (3, "Scott", 1,3000,1);
+insert into Employee(empid,empname,dept_id,salary) values (4, "Max", 2,9000);
+insert into Employee values (5, "Jack", 2,8000,4);
+insert into Employee(empid,empname,salary,manager) values (6, "King" ,6000,1);
+ -- order by (default- Asce    explicit mention- desc     i want  only 1 line use limit 1
+ desc Department;
+select * from Department;
+select * from Department order by dept_name;
+select * from Department order by dept_name desc;
+
+-- order by
+desc Employee;
+select * from Employee;
+select * from Employee order by empname;
+select * from Employee order by empname desc;
+
+-- group by       (where.......group by)
+select *, sum(salary) from Employee group by dept_id;
+select dept_id, sum(salary) from Employee where salary >=17000  group by dept_id;
+
+-- having        (having......group by)
+select dept_id, sum(salary) from Employee  group by dept_id having sum(salary)>=18000;
+select dept_id, sum(salary) from Employee group by dept_id having sum(salary)<20000;
