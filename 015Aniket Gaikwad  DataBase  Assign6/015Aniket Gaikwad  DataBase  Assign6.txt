@@ -1,0 +1,142 @@
+CREATE  DATABASE assignment6;
+USE assignment6;
+
+
+-- QUE1
+DELIMITER $$
+CREATE FUNCTION FACT( NUM INT) RETURNS INT
+BEGIN
+DECLARE FT,I INT;
+SET FT=1;
+SET I=1;
+        WHILE(I<=NUM) DO
+              SET FT=FT*I;
+              SET I=I+1;
+        END WHILE;
+     RETURN FT;   
+ END $$       
+SELECT FACT(6);
+
+
+-- QUE2
+delimiter $$
+CREATE FUNCTION PRIME ( NUM INT) RETURNS VARCHAR(20)
+BEGIN
+DECLARE I INT;
+SET I=2;
+     WHILE (I<=NUM/2) DO
+           IF(NUM%I=0) THEN
+             RETURN "NOT PRIME";
+           ELSE
+            SET I=I+1;
+		  END IF;
+	 END WHILE;
+  RETURN "PRIME";
+END $$  
+SELECT PRIME(39);
+SELECT PRIME(19);
+
+
+-- QUE3 
+DELIMITER $$
+CREATE FUNCTION CONV_MEASURE(NUM INT) RETURNS VARCHAR(30)
+BEGIN
+DECLARE YARD , FOOT,INCH INT ;
+SET YARD=NUM/36;
+SET FOOT=(NUM%36)/12;
+SET INCH=(NUM%36)%12;
+RETURN CONCAT( ROUND(YARD), " YARD", ROUND(FOOT), " FOOT", ROUND(INCH)," INCH");
+END $$
+SELECT CONV_MEASURE(124);
+
+
+--
+CREATE TABLE EMPLOYEE (empno int(4), ename varchar(20), job varchar(10),mgr int(4),hiredate date, salary int(10),comm int (10),
+                        deptno int(10));
+INSERT INTO EMPLOYEE values (1001, "shilpa","PTO",null,"2006-11-01",50000,5000,10);                        
+INSERT INTO EMPLOYEE values (1002,"snehal","PE",1001,"2012-11-10",40000,4000,10);
+INSERT INTO EMPLOYEE values (1003,"aditya","PE",1001,"2016-02-10",40000,4000,20);
+INSERT INTO EMPLOYEE values (1004,"omkar","PE",null,"2017-01-01",40000,4000,10);
+INSERT INTO EMPLOYEE values (1005,"rajeev","PTO",null,"2019-01-01",30000,6000,20);
+INSERT INTO EMPLOYEE values (1006,"sachin","TO",1001,"2001-05-08",32000,3200,null);
+DESC EMPLOYEE;
+SELECT * FROM EMPLOYEE;
+
+
+-- QUE4
+ DELIMITER $$
+ CREATE FUNCTION UPDATE_SAL(dept VARCHAR(20)) RETURNS VARCHAR(20)
+BEGIN
+UPDATE EMPLOYEE SET salary=(1.1*salary) WHERE job=dept;
+RETURN "UPDATED";
+END $$
+SELECT UPDATE_SAL("TO");
+select * from employee;
+
+-- QUE5
+DELIMITER $$
+CREATE FUNCTION USER_ANNUAL_COMP (p_eno INT ,p_comp INT ) RETURNS INT
+BEGIN
+   DECLARE annual_compensation INT DEFAULT 0;
+   DECLARE p_sal INT DEFAULT 0 ;
+   SET p_sal= (SELECT salary FROM EMPLOYEE WHERE empno=p_eno);
+      /* IF(p_sal IS NULL AND p_comp IS  NULL) THEN
+          SET annual_compensation =0;
+       ELSE IF(p_sal IS NULL ) THEN
+          SET p_sal=0;
+          SET annual_compensation =(p_sal+p_comm)*12;
+       ELSE IF ( p_comp IS NULL ) THEN
+         SET p_comp=0;
+         SET annual_compensation =(p_sal+p_comm)*12;
+       ELSE  */
+         SET annual_compensation =(p_sal+p_comp)*12;
+     -- END IF; 
+    RETURN annual_compensation;  
+ END $$;
+select USER_ANNUAL_COMP(1001,1000);
+
+
+-- QUE6
+DELIMITER $$
+CREATE PROCEDURE USER_QUERY_EMP (IN p_myeno INT(10), OUT p_myjob VARCHAR(20) ,OUT p_mysal INT(10))
+BEGIN
+ DECLARE PRESENT_ENO INT;
+ SET PRESENT_ENO=(SELECT COUNT(*) FROM EMPLOYEE WHERE empno=p_myeno);
+ 
+    IF (PRESENT_ENO=0) THEN
+    SELECT "EMLOYEE NOT EXIST";
+    ELSE
+     SELECT job,salary INTO p_myjob ,p_mysal FROM EMPLOYEE WHERE empno=p_myeno;
+    END IF;
+ END $$   
+SET @EMPNUM=1001;
+CALL  USER_QUERY_EMP(1001,@J, @S);
+SELECT @J;
+SELECT @S;
+
+
+-- QUE7
+DELIMITER $$
+CREATE PROCEDURE REVSERSESTR(INOUT STR VARCHAR(20))
+BEGIN
+   IF(STR=' ' OR ISNULL(STR)) THEN
+       SET STR="NO STRING";
+   ELSE    
+       SET STR=REVERSE(STR)  ;
+       SET STR= STR;
+   END IF;    
+END $$
+
+SET @X="WELCOME";
+CALL REVSERSESTR(@X);
+SELECT @X;
+
+
+-- QUE8
+DELIMITER $$
+CREATE PROCEDURE tabledetails ()
+BEGIN
+DESC EMPLOYEE;
+SELECT * FROM EMPLOYEE;
+END $$
+CALL tabledetails();
