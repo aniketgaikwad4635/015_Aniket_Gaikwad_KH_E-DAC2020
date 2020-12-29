@@ -1,0 +1,75 @@
+CREATE database assignment9;
+use assignment9;
+CREATE TABLE EMP(EID INT (4), 
+                ENAME VARCHAR(20),JOB VARCHAR(20), 
+                 MGR INT(10),HIREDATE DATE,SAL INT(10),COMM INT(10),DEPTNO INT (10),
+                 CONSTRAINT EMP_PK PRIMARY KEY(EID)
+                 );
+INSERT INTO EMP VALUES (1001,"shilpa","PTO",NULL,"2006-11-01",50000, 5000, 10);
+INSERT INTO EMP VALUES (1002,"snehal","PE",1001,"2012-11-10",40000, 4000, 10);
+INSERT INTO EMP VALUES (1003,"aditya","PE",1001,"2016-02-10",40000, 4000, 20);
+INSERT INTO EMP VALUES (1004,"omkar","PE",NULL,"2017-01-01",40000, 4000, 10);
+INSERT INTO EMP VALUES (1005,"rajeev","PTO",NULL,"2019-01-01",30000, 3000, 20);
+INSERT INTO EMP VALUES (1006,"sachin","TO",1001,"2001-05-08",32000, 3200, NULL);
+INSERT INTO EMP VALUES (1007,"scott","iopd",1001,"2001-05-08",32000, 3200, NULL);
+INSERT INTO EMP VALUES (1008,"king","jeas",1001,"2001-05-08",32000, 3200, NULL);
+SELECT * FROM EMP;
+
+-- que1
+SELECT ENAME FROM EMP WHERE ENAME REGEXP '^sc';
+
+-- que2
+SELECT ENAME FROM EMP WHERE ENAME REGEXP 'ng$';
+
+-- QUE3
+SELECT * FROM EMP WHERE JOB REGEXP 'io|ea';
+
+-- QUE4
+SELECT ENAME FROM EMP WHERE ENAME REGEXP '[sd]';
+
+
+-- QUE5
+create table tutorial(
+				id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                title VARCHAR(200),
+                description TEXT,
+                FULLTEXT(title,description)
+        );
+INSERT INTO tutorial(title,description) values 
+  ('SQL Joins','An SQL JOIN clause combines rows from two or more tables. It creates a set of rows in a temporary table.');
+  INSERT INTO tutorial(title,description) values 
+  ('SQL Equi Join','SQL EQUI JOIN performs a JOIN against equality or matching column(s) values of the associated tables.
+                     An equal sign (=) is used as comparison operator in the where clause to refer equality.');
+INSERT INTO tutorial(title,description) values                      
+  ('SQL Left Join','The SQL LEFT JOIN, joins two tables and fetches rows based on a condition, which is matching in both the 
+                    tables and the unmatched rows will also be available from the table before the JOIN clause.');
+INSERT INTO tutorial(title,description) values                     
+  ('SQL Cross Join','The SQL CROSS JOIN produces a result set which is the number of rows in the first table multiplied 
+                     by the number of rows in the second table, if no WHERE clause is used along with CROSS JOIN.');
+INSERT INTO tutorial(title,description) values 
+  ('SQL Full Outer Join','In SQL the FULL OUTER JOIN combines the results of both left and right outer joins and returns all 
+                           (matched or unmatched) rows from the tables on both sides of the join clause.'); 
+INSERT INTO tutorial(title,description) values                            
+   ('SQL Self Join','A self join is a join in which a table is joined with itself (which is also called Unary relationships), especially 
+                     when the table has a FOREIGN KEY which references its own PRIMARY KEY.');
+									
+-- 6.	Write a query to find ‘Left right’ in description field.
+SELECT DESCRIPTION FROM tutorial where MATCH(title,description) AGAINST ("Left right" IN NATURAL LANGUAGE MODE);
+
+-- 7.	Write a query to find the count of ‘Left right’ string matches in description field.
+SELECT COUNT(DESCRIPTION) FROM tutorial WHERE MATCH(title,description) AGAINST ("Left right" IN NATURAL LANGUAGE MODE); 
+
+-- 8.	Write a query that retrieves all the rows that contain the word 'Joins' but not 'right'.
+SELECT * FROM tutorial WHERE MATCH (title,description) AGAINST('Joins -right' IN BOOLEAN MODE);                                  
+  
+                
+
+
+
+
+
+
+
+
+
+
