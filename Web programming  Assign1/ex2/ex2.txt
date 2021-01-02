@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title> RIP </title>
+  </head>
+    
+    <body style="background-color:skyblue">
+      <h1 >   Rest In Piece Mr Irrfan Khan </h1>
+      <img style="img-align:right" src="irfan.jpg" alt="Irrfan_khan_img" height="300" width="400">   
+      <br>
+      <small>&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Late Mr. Irrfan Khan </small>
+       <br>
+        <br>
+       <div> &nbsp &nbsp &nbsp  &nbsp &nbsp  We all know Irrfan Khan was the one of the most famous actor in India. two month ago he passed away. <br>
+             he worked in so many hindi movies as well as Hollywood movies. his movie Life of Pie was got nomination for oscar award.
+    </body> 
+
+</html> 

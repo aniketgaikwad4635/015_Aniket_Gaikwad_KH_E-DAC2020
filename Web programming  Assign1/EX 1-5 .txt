@@ -1,0 +1,221 @@
+EXAMPLE:1
+
+
+<html>
+   <head>
+      <title> Bio-Data  </title>
+   </head>
+
+  <body style="background-color:skyblue;">
+
+    <h1> Assignment 1 </h1>
+
+    <p style="font-size:150%" > Personal details </p>
+    <table>
+     <tr>
+        <td> First Name: &nbsp </td>  <td> <input type="text" placeholder="Enter your First Name" />    </td>              
+     </tr>
+      
+     <tr>
+         <td> Middle Name: &nbsp </td> <td> <input type="text" placeholder="Enter your Middle Name" />    </td>  
+       </tr>
+     <tr> 
+        <td>  Last Name: &nbsp </td>    <td> <input type="text" placeholder="Enter your Last Name"  />    </td>   
+     </tr>
+    </table>
+
+    <p style="font-size:150%" > Family Details </p>
+    <table>
+       <tr>
+          <td> Father Name: &nbsp  </td>   <td> <input type="text" placeholder="Enter your Father Name"  />   </td>
+       </tr>
+
+       <tr>
+         <td> Mother Name: &nbsp </td>      <td> <input type="text" placeholder="Enter your Mother Name" />   </td>
+       </tr>
+    </table>
+
+    <p style="font-size:150%" > Educational Details </P>
+     <table>
+        <tr>
+          <td> SSC Percentage: &nbsp </td>  <td> <input type="text" placeholder="Enter your 10th %" >    </td>
+        </tr>
+
+        <tr>
+          <td> HSC Percentage: &nbsp </td>  <td> <input type="text" placeholder="Enter your 12th %" >    </td>
+        </tr>
+
+        <tr>
+          <td> Degre Percentage: &nbsp </td>  <td> <input type="text" placeholder="Enter Degree %" >    </td>
+        </tr> 
+
+      </table>
+
+       <P style="font-size:150%" > Extra-Curricular Activity </p>
+       <table>
+         <tr>
+            <td> Enter Extra Activities: &nbsp </td>  <td> <input type="text" placeholder="Extra-Curricular Activities &nbsp &nbsp"  />  </td>
+          </tr> 
+      </table>
+
+      <p style="font-size:150%" > More Info </p>
+      <table>  
+         <tr>  
+          <td> Enter your strengths: &nbsp </td> <td> <input type="text" placeholder="Enter your strength" /> </td>
+         </tr>
+         <tr>  
+          <td> Enter your weakness: &nbsp </td> <td> <input type="text" placeholder="Enter your weakness" /> </td>
+         </tr>
+      </table>
+  </body>
+</html>
+
+
+===========================================================================================================
+
+
+EXAMPLE 2
+
+<html>
+  <head>
+    <title> RIP </title>
+  </head>
+    
+    <body style="background-color:skyblue">
+      <h1 >   Rest In Piece Mr Irrfan Khan </h1>
+      <img style="img-align:right" src="irfan.jpg" alt="Irrfan_khan_img" height="300" width="400">   
+      <br>
+      <small>&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Late Mr. Irrfan Khan </small>
+       <br>
+        <br>
+       <div> &nbsp &nbsp &nbsp  &nbsp &nbsp  We all know Irrfan Khan was the one of the most famous actor in India. two month ago he passed away. <br>
+             he worked in so many hindi movies as well as Hollywood movies. his movie Life of Pie was got nomination for oscar award.
+    </body> 
+
+</html> 
+
+=============================================================================================================
+
+EXAMPLE 3
+<DOCTYPE html>
+    <html>
+      <head>
+          <title>Links</title>
+      </head>
+      <body>
+          <h1>Here are my favourite sites</h1>
+
+          <p>click on a name to go that page</p>
+            
+               <li list-style="disc"> <a href="https://www.youtube.com/" > youtube   </a>  </li>  
+               <li list-style="disc" > <a href="http://www.wikipedia.com/">  wikipedia </a> </li>
+               <li list-style="disc"> <a href="http://www.amazon.com/" >  amazon   </a>    </li>
+               <li list-style="disc"> <a href="https://www.w3schools.com/">  w3school </a>  </li>
+         
+      </body>
+
+
+    </html>
+
+
+=============================================================================================================
+
+EXAMPLE 4
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+       <title> Lists  </title>
+    </head>
+     <body>
+         <h1> the best feature of internet </h1>
+       
+       <ul>
+          <li> you can meet new people from countries around the world </li>
+          <li> you have access to new media as it becomes public: </li>
+             <ul> 
+               <li> New games  </li>
+               <li > New appliation
+                   <ol> 
+                       <li> For bussiness  </li>
+                       <li> for pleasure</li>
+                    </ol>
+                   
+               </li>
+               <li>Around the clock news </li>
+                <li>search engine </li> 
+                <li> shopping </li>
+                <li>programming</li>
+                <ol>
+                    <li> XML </li>
+                    <li> Java </li>
+                    <li> HTML </li>
+                    <li> javaScript</li>
+                    <li> New languages</li>
+                </ol>
+                
+              </ul>
+            <li>Links</li>
+            <li>Keeing in touch with old friends</li>
+            <li>It's the technology of the future</li>
+       </ul>
+            
+     </body>   
+</html>
+
+
+=============================================================================================================
+
+EXAMPLE 5
+
+<!DOCTYPE html>
+<html>
+     <head>
+         <title> Table</title>
+     </head>
+     <body>
+         <h3>Table example : span</h3>
+ 
+          <table border="2px" cellpadding="10">
+            <tr>
+                <th rowspan="2"> <img src="camel.jpg" alt="camel" height="100" width="100"></th>  
+                <th colspan="4"> camelid comparison <br>
+                    Approximate as of 6/2/2011
+                </th>  
+                <!-- <th> indigenous region</th> -->
+                <!-- <th>split?</th> -->
+                <!-- <th>produces wool?</th> -->
+              </tr>
+            <tr>
+             <!--  <th> camel</th>  -->  
+              <th> # of humps   </th>
+              <th> indigenous region</th>
+              <th>split?</th>
+              <th>produces wool?</th>
+            </tr>
+
+             
+            <tr>
+                <td> <strong>camel(bactrion)</strong></td>  
+                <td> 2   </td>
+                <td> Asia/africa</td>
+                <td>yes</td>
+                <td>yes</td>
+              </tr>
+
+              <tr>
+                <td> <strong>lamas</strong></td>  
+                <td> 1   </td>
+                <td> andes mountain</td>
+                <td>yes</td>
+                <td>yes</td>
+              </tr>
+
+          </table>
+     </body>
+    
+</html>
+
+
+
