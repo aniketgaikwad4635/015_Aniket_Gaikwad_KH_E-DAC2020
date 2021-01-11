@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ex5</title>
+    </head>
+    <body>
+        <script>
+            var arr=[1,2,3,4,5];
+            arr["5"]=6;
+          
+            for(var i=0;i<arr.length;i++){
+                document.write(arr[i]+" ");
+            }
+            document.write("=");
+           function add_all(arr){
+               var ans=0;
+                for(var i=0;i<arr.length;i++){
+                 ans=ans+arr[i];
+              }
+              document.write(ans+" ");
+            }
+            add_all(arr);
+
+        </script>
+
+    </body>
+
+
+
+</html>
