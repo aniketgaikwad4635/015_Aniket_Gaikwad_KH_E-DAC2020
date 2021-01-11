@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     <script>
+         function check(){
+             let namereg=/^[a-zA-Z]{3,50}$/;
+             let mobreg=/^[0-9]{10}/;
+            // let emailreg=/^[a-zA-Z-0-9]@[a-z]{2,10}\.[a-z]{3}$/;
+             let emailreg=/^([a-z0-9\.-]+)@([0-9a-z-]+).([a-z]{2,8})(.[a-z]{2,8})$/
+         let formname=document.form1.name.value;
+         let formob=document.form1.mob.value;
+         let foremail=document.form1.email.value;
+         let forgender=document.form1.gender.value;
+
+               if(!namereg.test(formname)){
+                    alert("enter name");
+                    return false;
+               }
+               else if(!mobreg.test(formob)){
+                   alert("enter valid mobile number");
+                   return false;
+               }
+               else if(!emailreg.test(foremail)){
+                    alert("enter valid email address") ;
+                    return false;
+               }
+               else if(forgender=="" || forgender===null){
+                   alert("select any one gender");
+                   return false;
+               }
+         }
+
+     </script>
+
+   <form onclick="check()" name="form1" action="" method="get">
+     <table >
+          <tr>
+              <td>
+                  Name:<input name="name" type="text"  />
+              </td>
+          </tr>
+          <tr>
+            <td>
+                Mobile:<input name="mob" type="text"  />
+            </td>
+         </tr>
+         <tr>
+            <td>
+                email:<input name="email" type="email"  />
+            </td>
+         </tr>
+         <tr>
+             <td>
+                 <input name ="gender" type="radio" value="m"> Male <br>
+                 <input name="gender" type="radio" value="f"/> female
+              </td>
+         </tr>
+         <tr>
+             <td>
+                <input name="submit" type="submit" value="submit"/>
+             </td>
+             
+         </tr>
+
+     </table>
+
+    </form>
+
+
+</body>
+</html>

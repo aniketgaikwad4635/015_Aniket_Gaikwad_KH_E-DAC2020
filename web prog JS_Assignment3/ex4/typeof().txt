@@ -1,0 +1,27 @@
+var a=3;
+typeof(a);
+>>"number"-
+
+var b=new String("hello");
+typeof(b);
+>>"object"
+
+var c=new Object();
+typeof(c);
+>>"object"
+
+var d=true;
+typeof(d);
+>>"boolean"
+
+var e=[1,2,3];
+typeof(e);
+>>"object"
+
+var f={};
+typeof(f);
+>>"object"
+
+var g=[];
+typeof(g);
+>>"object"

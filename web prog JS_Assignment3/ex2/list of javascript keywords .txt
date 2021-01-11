@@ -1,0 +1,41 @@
+
+
+await
+var      let          const
+null 
+private
+protected
+public
+static
+true     false
+this(public/current reference)
+break   continue
+switch
+case    default
+if       else
+for      in 
+while
+do       while
+try     catch     throw  finally
+class 
+void
+
+debugger
+delete
+enum 
+import     export 
+extends   implements   interface
+
+function    return
+instanceOf
+new
+pakage 
+super
+with
+yield
+
+
+
+
+
+
