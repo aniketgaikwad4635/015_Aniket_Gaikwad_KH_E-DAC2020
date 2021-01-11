@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+    <html>
+          <head>
+              <title>ex3</title>
+          </head>
+          <body>
+           <script>
+              
+                var arr=[{"radius":"5"},{"radius":"9"},{"radius":"2"}];
+                var getsort=arr.sort();
+                for(var showr in getsort){
+                    document.print(showr+" ");
+                }
+
+                var brr={};
+                brr["radius1"]=5;
+                brr["radius2"]=9;
+                brr["radius3"]=2;
+
+               /* for(var i=0;i<brr.length;i++){
+                    document.write(i+" ");
+                }*/
+                for(var s in brr){
+                    document.write(brr[s]+" ");
+                }
+
+           </script>
+          </body>
+    </html>
