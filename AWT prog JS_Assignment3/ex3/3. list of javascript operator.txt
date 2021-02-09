@@ -1,0 +1,39 @@
+
+
+unary operator(only one operand required)
+arithmatic unary operator
+x++   --x
+y--   --y
+
+binary operator(two operand required)
+
+Arithmatic
+*  **(exponanetial) / + - %
+
+Assignment =
+=*  =**  =/ =+  =- =% 
+
+relational/comparator
+<   <=   >=  >  ==  !==   ===   !===   ?(ternary)
+
+type operator
+type of
+instance of
+
+logical
+&&
+||
+!
+
+biwise/short-circuit
+& 
+|
+~ (not)
+^ (nor)
+<< zero left shift
+>> signed right shift
+>>> zero right shift
+
+
+
+

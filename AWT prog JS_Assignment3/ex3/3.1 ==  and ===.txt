@@ -1,0 +1,15 @@
+
+
+var a=2;
+var b=new String("2");
+var c=new String("2");
+
+== check only value
+ a==b    //true
+ b==c    //true
+ a==c    //true
+
+=== first check type and then value
+ a===b   //false
+ b===c   //true
+ a===c   //false
