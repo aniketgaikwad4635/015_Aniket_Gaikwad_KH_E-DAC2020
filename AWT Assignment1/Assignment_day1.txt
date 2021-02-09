@@ -1,0 +1,12 @@
+Day 1: HTML Basics
+Downloads: IDE: Notepad++, Browser
+Assignment 1:
+Design a Web page for your Bio-data. You must add the following sections
+• Personal details
+• Family details
+• Educational Qualifications
+• Extra-Curricular Activities
+• Strength and Weakness
+
+Assignment 2:
+Design a Web page to express your thoughts about Life journey of our dearest late Mr Rishi Kapoor or Mr Irrfan Khan.
