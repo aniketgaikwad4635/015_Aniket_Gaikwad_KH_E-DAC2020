@@ -1,0 +1,132 @@
+QUE2 A
+
+var str="Hello CDAC"
+str;
+=======================================================
+QUE2 B
+
+var a=100;
+a;
+>>100
+
+var b=-100;
+b;
+>>-100
+
+var c=1.111111111111111111
+c;
+>>1.1111111111111112
+
+var d=0.121314;
+d;
+>>0.121314
+
+var e='s';
+e;
+>>"s"
+
+var f="s";
+f;
+>>"s"
+
+var g=s;
+g;
+>>Uncaught ReferenceError: s is not defined
+    <anonymous> debugger eval code:1
+
+var h=true;
+h;
+>>true
+
+var i=false;
+i;
+>>false
+
+var j=NaN;
+j;
+>>NaN
+
+var j=NaN;
+j;
+if(j==NaN)
+  console.log("NaN equal");
+else
+  console.log("NaN not equal");
+>>NaN not equal
+
+var k=isNaN;
+k;
+>>function isNaN()
+
+var l=null;
+l;
+if(l==null)
+  console.log("null equal");
+else
+  console.log("null not equal");
+>>null equal
+
+var m=undefined;
+m;
+if(m==undefined)
+  console.log("undefined equal");
+else
+  console.log("undefined not equal");
+>>undefined equal
+
+var n=infinity;
+n;
+if(m==infinity)
+  console.log("infinity equal");
+else
+  console.log("infinity not equal");
+>>Uncaught ReferenceError: infinity is not defined
+    <anonymous> debugger eval code:1
+
+
+
+
+=======================================================
+
+QUE 2 C
+
+var str="this is a var as string";
+str;                                 >>"this is a var as string"
+str.length;                          >>23
+str.toUpperCase();                   >>"THIS IS A VAR AS STRING"
+str.toLowerCase();                   >>"this is a var as string"
+str.indexOf("a");                    >>8
+str.charAt(8);                       >>"a"
+str.includes("is");                  >>true
+str.concat(" concat to add")         >>"this is a var as string concat to add"
+
+//variable             
+var aa="hello";aa;              >>"hello"
+
+//string object
+var bb=new String("hello");bb   >>String { "hello" }
+
+//string object
+var cc=new String("hello");cc;   >>String { "hello" }
+
+1) if(aa==bb)    >>true
+2) if(aa==cc)    >>true
+3) if(bb==cc)    >>false
+
+
+1) if(aa===bb)    >>false
+2) if(aa===cc)    >>false
+3) if(bb===cc)    >>false
+
+
+
+
+
+
+
+
+
+
+
+
+

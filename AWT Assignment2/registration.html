@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
+   <title>Registration Form</title>
+   <style>
+       body{
+           background:url(hand-lptp.jpg);          
+       }
+       .for_shift{
+           margin-left:130px;
+           padding:20px;
+           width:380px;
+           border-radius: 10px;
+           background-color:rgb(134, 148, 106);
+           
+       }
+   </style>
+ </head>
+ <body>
+     <form action="" method="get">
+     <br> <br> <br> <br> 
+     <h1> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  Registration Form </h1>
+     <div></div>
+    <table class="for_shift" >
+           <tr> 
+               <td> Student Name: </td> <td> <input name="snm" type="text"  /> </td>
+           </tr>
+            <tr> 
+               <td> branch: </td>
+               <td>   <select>
+                             <option> Computer
+                             <option> Electrical
+                             <option> Mechanical
+                             <option> ENTC
+                             <option> civil    
+                             </option>       
+                </td>
+            </tr>
+
+           <tr>
+               <td>Gender: </td> 
+               <td> <input id="rgm" name="gender" type="radio" value="m" /> 
+                    <label for="rgm"> Male</label> 
+                    <input id="rgf" name="gender" type="radio" value="f">
+                    <label for="rgf"> Female</label>
+                    </td>
+            </tr>
+
+           <tr>
+               <td> Apply for:</td>
+               <td>  
+                 <input name="Event-1" type="checkbox" value="Event-1">Event-1 <br>
+                 <input name="Event-2" type="checkbox" value="Event-2" />Event-2 <br>
+                 <input name="Event-3" type="checkbox" value="Event-3" />Event-3 <br>
+                 <input name="Event-4" type="checkbox" value="Event-4" />Event-4 <br>
+               </td>
+            </tr>
+
+            <tr>
+              <td> Language Known:</td>
+              <td>  
+                <input name="JAVA" type="checkbox" value="JAVA">JAVA <br>
+                <input name="MySQL" type="checkbox" value="MySQL" />MySQL <br>
+                <input name="MongoDB" type="checkbox" value="MongoDB" />MongoDB <br>
+                <input name="HTML" type="checkbox" value="HTML" />HTML <br>
+                <input name="CSS" type="checkbox" value="CSS" />CSS <br>
+              </td>
+           </tr> 
+            <tr> 
+               <td> Mob No: </td> <td> <input name="mob" type="text"    /> </td>
+            </tr>
+           
+            <tr> 
+              <td> Email: </td> <td> <input name="mail" type="email" required="required"  /> </td>
+            </tr>
+
+            <tr>
+               <td> <input name="Clear" type="reset"  value="Clear" /> </td> 
+               <td> <input name="Register" type="submit"  value="Register" /> </td>
+            </tr>
+    </table>
+   </form>
+ </body>
+
+</html>

@@ -1,0 +1,11 @@
+body{
+    background:url(blackbulb.jpg) no-repeat;
+    background-size:cover;
+    
+}
+
+#tophead{
+    font-size: 60px;
+    text-align: center;
+    color:wheat;
+}
