@@ -1,0 +1,19 @@
+<DOCTYPE html>
+    <html>
+      <head>
+          <title>Links</title>
+      </head>
+      <body>
+          <h1>Here are my favourite sites</h1>
+
+          <p>click on a name to go that page</p>
+            
+               <li list-style="disc"> <a href="https://www.youtube.com/" > youtube   </a>  </li>  
+               <li list-style="disc" > <a href="http://www.wikipedia.com/">  wikipedia </a> </li>
+               <li list-style="disc"> <a href="http://www.amazon.com/" >  amazon   </a>    </li>
+               <li list-style="disc"> <a href="https://www.w3schools.com/">  w3school </a>  </li>
+         
+      </body>
+
+
+    </html>
