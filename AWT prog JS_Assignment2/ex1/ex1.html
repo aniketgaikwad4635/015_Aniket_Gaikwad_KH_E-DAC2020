@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>ex1</title>
+   </head>
+ <body>
+    <script>
+             function createFn(y) {
+                 var p=y;
+                 function testclosure(){
+                    
+                     document.write(p+" ");
+                     
+                 }
+                 p=p+5;
+                 testclosure();
+                 p=p+20;
+                 
+                 return p;
+                 
+             }
+            
+              //var mulNextNum=createFn(function(x,y){return x+y;});
+             // var mulPrevNum=createFn(function(x,y){return x-y;});
+
+             // mulNextNum();
+             var retun=createFn(10) ;
+             document.write(retun);
+
+    </script>
+
+
+
+
+
+ </body>
+
+
+</html>

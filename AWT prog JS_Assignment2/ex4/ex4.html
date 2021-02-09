@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+    <html>
+          <head>
+              <title>ex3</title>
+          </head>
+          <body>
+           <script>
+              
+              var arr=[10,25,8,2,16,1];
+
+              for(var i=0; i<arr.length;i++){
+                  var minIndex=i;
+
+                  for(var j=i;j<arr.length;j++){
+                      if(arr[j]<arr[minIndex])
+                      {
+                          minIndex=j;
+                      }
+                  }
+                  var temp=arr[i];
+                  arr[i]=arr[minIndex];
+                  arr[minIndex]=temp;
+              }
+
+              for(var r in arr){
+                  document.write(arr[r]+" ");
+              }
+
+           </script>
+          </body>
+    </html>

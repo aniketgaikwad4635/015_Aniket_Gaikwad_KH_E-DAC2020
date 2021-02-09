@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>ex6</title>
+    </head>
+    <body>
+       <script>
+
+            //parent
+            var Cricketer=function(name,age){
+                this.name=name;
+                this.age=age;
+            };
+            
+            Cricketer.prototype.name=function(){
+                   document.write("Cricketer name is "+this.name);
+             };
+             Cricketer.prototype.alldetails=function(){
+                document.write("Cricketer name is "+this.name+" and age="+this.age);
+             };
+
+             //child
+             function Batsman(name,age,run){
+                Cricketer.call(this,name,age);
+                this.run=run;  
+             };
+
+             Batsman.prototype=Object.create(Cricketer.prototype);
+
+             Batsman.prototype.constructor=Batsman;
+
+             Batsman.prototype.alldetails=function(){
+                document.write("Cricketer name is "+this.name+" and age="+this.age+" and runs="+this.run);
+             };
+
+
+               var bat=new Batsman("sachin","50","50000");
+               bat.alldetails();
+
+       </script>
+
+    </body>
+
+</html>

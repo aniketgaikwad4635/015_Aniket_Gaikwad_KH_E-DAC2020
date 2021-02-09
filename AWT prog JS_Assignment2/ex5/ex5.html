@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ex5</title>
+    </head>
+    <head>
+          <script>
+             var arr=[1,2,3,4,5,6,null,null,undefined,undefined];
+           
+             function length_of_array(arr){
+
+               var l=arr.length;
+               var nullcount=0;
+               for(var i=0;i<l;i++){
+                   if(isNaN(arr[i])){
+                       nullcount++;
+                   }
+               }
+               document.write("count of null values ="+nullcount+"\n");
+                document.write("length of array without null values="+(l-nullcount));
+
+             }
+             length_of_array(arr);
+ 
+          </script>
+
+    </head>
+
+</html>
